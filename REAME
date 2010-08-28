@@ -1,0 +1,5 @@
+This is a Perl 6 port of mowyw, an offline CMS originally written in Perl 5.
+
+See http://perlgeek.de/en/software/mowyw for a more verbose description.
+
+Status: I'm working on the parser right now.
