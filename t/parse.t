@@ -16,6 +16,10 @@ my @samples =
     [1, '[% setvar foo = bar baz %]', 'setvar with optional ='],
     [1, '[% readvar foo %]',        'readvar'],
     [0, '[% readvar %]',            'readvar neads a var name'],
+    [1, '[% verbatim %] foo %] blubb [% [% endverbatim %]',
+                                    'verbatim'],
+    [0, '[% verbatim %] foo %] blubb [%',
+                                    'open-ended verbatim'],
 
     ;
 

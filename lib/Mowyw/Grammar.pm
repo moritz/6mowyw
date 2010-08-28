@@ -23,6 +23,14 @@ token command:sym<comment> { <sym>  [ <!before '%]'> .]* }
 token command:sym<include> { <sym> <.ws> <arg> }
 rule  command:sym<setvar>  { <sym> <name> '='? <slurpy_arg> }
 rule  command:sym<readvar> { <sym> <name> }
+regex command:sym<verbatim> {
+        <sym>
+        <.ws> '%]' :
+        (.*?) '[%'
+        <.ws> 'endverbatim'
+        <.ws> <?before '%]'>
+        # the final %] is parsed by token directive
+}
 
 
 # vim: ft=perl6
